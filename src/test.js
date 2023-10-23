@@ -1,5 +1,5 @@
 import stripAnsi from 'strip-ansi'
-import uuid from 'uuid/v4'
+import uuid from 'uuid/v4.js'
 
 export default class {
     constructor (data, suiteUUID) {
