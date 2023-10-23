@@ -1,4 +1,4 @@
 // make mergeResults available at the root
-import { mergeResults } from './src/mergeResults.js';
+import { mergeResults } from './src/mergeResults.js'
 
-export default mergeResults();
+export default mergeResults()
