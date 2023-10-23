@@ -1,7 +1,7 @@
-const stripAnsi = require('strip-ansi')
-const uuid = require('uuid/v4')
+import stripAnsi from 'strip-ansi'
+import uuid from 'uuid/v4'
 
-module.exports = class {
+export default class {
     constructor (data, suiteUUID) {
         this.title = data.title
         this.fullTitle = data.title

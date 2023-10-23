@@ -1,4 +1,4 @@
-module.exports = class {
+export default class {
     constructor (start) {
         this.suites = 0
         this.tests = 0

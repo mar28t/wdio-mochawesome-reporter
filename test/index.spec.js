@@ -1,4 +1,4 @@
-const WdioMochawesomeReporter = require('../src/index').default
+import WdioMochawesomeReporter from '../src/index'
 
 describe('Reporter Tests',()=>{
     const runner = {
@@ -13,7 +13,7 @@ describe('Reporter Tests',()=>{
     })
 
     it('onRunnerStart',()=>{
-        expect(reporter.results).toMatchObject({ 
+        expect(reporter.results).toMatchObject({
             copyrightYear: expect.anything(),
             stats: expect.anything(),
             suites: expect.anything()
@@ -33,7 +33,7 @@ describe('Reporter Tests',()=>{
     it('onTestStart',()=>{
         const suite = {title: 'sample suite',uuid: '1234'}
         const test = {title: 'this is a test',uuid: '9876'}
-        
+
         reporter.onSuiteStart(suite)
         reporter.onTestStart(test)
         expect(reporter.currTest.title).toBe(test.title)
@@ -43,7 +43,7 @@ describe('Reporter Tests',()=>{
     it('onTestSkipped',()=>{
         const suite = {title: 'sample suite',uuid: '1234'}
         const test = {title: 'this is a test',uuid: '9876'}
-        
+
         reporter.onSuiteStart(suite)
         reporter.onTestStart(test)
         expect(reporter.currTest.title).toBe(test.title)

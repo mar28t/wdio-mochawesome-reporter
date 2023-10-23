@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
+import { readdirSync, readFileSync, writeFileSync } from 'fs'
+import { join } from 'path'
 
-const mergeResults = (...args) => {
+export const mergeResults = (...args) => {
     const dir = args[0] || process.argv[2]
     const filePattern = args[1] || process.argv[3]
     const customFileName = args[2] || process.argv[4]
@@ -12,11 +12,11 @@ const mergeResults = (...args) => {
 }
 
 function getDataFromFiles (dir, filePattern) {
-    const fileNames = fs.readdirSync(dir).filter(file => file.match(filePattern))
+    const fileNames = readdirSync(dir).filter(file => file.match(filePattern))
     const data = []
 
     fileNames.forEach(fileName => {
-        data.push(JSON.parse(fs.readFileSync(`${dir}/${fileName}`)))
+        data.push(JSON.parse(readFileSync(`${dir}/${fileName}`)))
     })
 
     return data
@@ -54,8 +54,6 @@ function mergeData (rawData) {
 
 function writeFile (dir, mergedResults, customFileName) {
     let fileName = customFileName || 'wdio-ma-merged.json'
-    const filePath = path.join(dir, fileName)
-    fs.writeFileSync(filePath, JSON.stringify(mergedResults))
+    const filePath = join(dir, fileName)
+    writeFileSync(filePath, JSON.stringify(mergedResults))
 }
-
-module.exports = mergeResults

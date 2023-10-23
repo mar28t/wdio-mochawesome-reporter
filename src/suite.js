@@ -1,5 +1,5 @@
-const uuid = require('uuid/v4')
-module.exports = class {
+import uuid from 'uuid/v4'
+export default class {
     constructor (isRoot, data, saniCaps) {
         this.title = ''
         this.suites = []

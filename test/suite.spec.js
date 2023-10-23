@@ -1,5 +1,5 @@
-const Suite = require('../src/suite')
-const Test = require('../src/test')
+import Suite from '../src/suite'
+import Test from '../src/test'
 
 describe('Suite Class Tests',()=>{
     it('Should successfully instantiate a ROOT suite',()=>{

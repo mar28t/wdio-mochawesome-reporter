@@ -1,9 +1,9 @@
-const WDIOReporter = require('@wdio/reporter').default
-const Suite = require('./suite')
-const Stats = require('./stats')
-const Test = require('./test')
+import WDIOReporter from '@wdio/reporter'
+import Suite from './suite'
+import Stats from './stats'
+import Test from './test'
 
-class WdioMochawesomeReporter extends WDIOReporter {
+export default class WdioMochawesomeReporter extends WDIOReporter {
     constructor (options) {
         options = Object.assign(options)
         super(options)
@@ -84,5 +84,3 @@ class WdioMochawesomeReporter extends WDIOReporter {
         process.emit('wdio-mochawesome-reporter:addContext', context)
     }
 }
-
-exports.default = WdioMochawesomeReporter
