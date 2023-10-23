@@ -1,7 +1,7 @@
 import WDIOReporter from '@wdio/reporter'
-import Suite from './suite'
-import Stats from './stats'
-import Test from './test'
+import Suite from './suite.js'
+import Stats from './stats.js'
+import Test from './test.js'
 
 export default class WdioMochawesomeReporter extends WDIOReporter {
     constructor (options) {
